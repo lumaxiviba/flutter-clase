@@ -8,18 +8,15 @@ class Buttonlight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Usamos Expanded para que el botón llene su parte de la fila proporcionalmente
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(4.0), // Espacio entre botones
+        padding: const EdgeInsets.all(4.0),
         child: ElevatedButton(
           onPressed: () => onClick(numero),
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color.fromARGB(255, 81, 223, 255),
             foregroundColor: Colors.black,
-            padding: const EdgeInsets.symmetric(
-              vertical: 20,
-            ), // Altura del botón
+            padding: const EdgeInsets.symmetric(vertical: 20),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
@@ -36,7 +33,7 @@ class Buttonlight extends StatelessWidget {
 
 class Buttondark extends StatelessWidget {
   final String numero;
-  final void Function(String) onClick; // Añadido para que sea funcional
+  final void Function(String) onClick;
 
   const Buttondark({super.key, required this.numero, required this.onClick});
 
