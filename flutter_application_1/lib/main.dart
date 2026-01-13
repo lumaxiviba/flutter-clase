@@ -34,8 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _ctrlDisplay = TextEditingController(text: "0");
   double aux1 = 0;
   String operacion = "";
-  bool nuevoNumero =
-      true; // Para saber si debemos limpiar la pantalla al escribir
+  bool nuevoNumero = true;
 
   void gestionarClick(String valor) {
     setState(() {
@@ -60,7 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
         operacion = "";
         nuevoNumero = true;
       } else {
-        // Escribir números
         if (nuevoNumero || _ctrlDisplay.text == "0") {
           _ctrlDisplay.text = valor;
           nuevoNumero = false;
@@ -80,7 +78,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          // Pantalla de la calculadora
           Container(
             padding: const EdgeInsets.all(20),
             alignment: Alignment.centerRight,
@@ -93,7 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           const Spacer(),
-          // Filas de botones
           buildRow(["AC", "()", "%", "/"]),
           buildRow(["7", "8", "9", "x"]),
           buildRow(["4", "5", "6", "-"]),
@@ -105,7 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  // Función para crear filas rápidamente
   Widget buildRow(List<String> etiquetas) {
     return Row(
       children: etiquetas.map((label) {
